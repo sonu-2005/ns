@@ -1,4 +1,4 @@
-Write a C program that simulates a Role-Based Access Control System
+
 
 #include <stdio.h>
 #include <string.h>
@@ -69,29 +69,17 @@ int main() {
         success = authenticate(username, password);
 
         if (!success) {
-            printf("❌ Invalid credentials. Try again.\n");
+            printf(" Invalid credentials. Try again.\n");
             attempts++;
         }
     }
 
     if (!success) {
-        printf("\n❌ Access Denied. Too many failed attempts.\n");
+        printf("\n Access Denied. Too many failed attempts.\n");
     } else {
-        printf("✅ You are logged in successfully.\n");
+        printf(" You are logged in successfully.\n");
     }
 
     return 0;
 }
 
-
-===== Role-Based Access Control System =====
-
-Enter Username: admin
-Enter Password: admin123
-
-Access Granted as Admin
-Permissions:
- - View System Settings
- - Modify Users
- - Access All Logs
-✅ You are logged in successfully.
