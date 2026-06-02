@@ -1,6 +1,3 @@
-Write a C program to implement the MD5 hashing algorithm without using any external cryptographic libraries.
-
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
