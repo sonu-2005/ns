@@ -1,6 +1,3 @@
-Write a C Program to implement EAP
-
-
 #include <stdio.h>
 #include <string.h>
 
@@ -19,10 +16,10 @@ void sendEAPMessage(int code, const char *message) {
             printf("[EAP-Response]: %s\n", message);
             break;
         case EAP_SUCCESS:
-            printf("[EAP-Success]: Authentication Successful ✅\n");
+            printf("[EAP-Success]: Authentication Successful \n");
             break;
         case EAP_FAILURE:
-            printf("[EAP-Failure]: Authentication Failed ❌\n");
+            printf("[EAP-Failure]: Authentication Failed \n");
             break;
         default:
             printf("[Unknown EAP Code]\n");
@@ -58,13 +55,3 @@ int main() {
     return 0;
 }
 
-
------- Simulated EAP Handshake ------
-
-[EAP-Request]: Please provide your Identity.
-Enter Identity: student123
-[EAP-Response]: student123
-[EAP-Request]: Please provide your Password.
-Enter Password: secure@123
-[EAP-Response]: ********
-[EAP-Success]: Authentication Successful ✅
