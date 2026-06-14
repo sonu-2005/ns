@@ -1,0 +1,40 @@
+#include <stdio.h>
+#include <ctype.h>
+
+// Function to encrypt/decrypt using alphabet reversal
+void encryptDecrypt(char text[]) {
+    for (int i = 0; text[i] != '\0'; i++) {
+        if (isalpha(text[i])) {  // Check if it's a letter
+            if (isupper(text[i])) {
+                text[i] = 'Z' - (text[i] - 'A');  // Reverse A-Z
+            } else if (islower(text[i])) {
+                text[i] = 'z' - (text[i] - 'a');  // Reverse a-z
+            }
+        }
+    }
+}
+
+int main() {
+    char message[100];
+
+    // Get user input
+    printf("Enter the message: ");
+    fgets(message, sizeof(message), stdin);
+
+    // Encrypt the message
+    encryptDecrypt(message);
+    printf("Encrypted Message: %s", message);
+
+    // Decrypt the message (Reapply the same function)
+    encryptDecrypt(message);
+    printf("Decrypted Message: %s", message);
+
+    return 0;
+}
+
+
+output
+
+Enter the message: Hello World
+Encrypted Message: Svool Dliow
+Decrypted Message: Hello World
