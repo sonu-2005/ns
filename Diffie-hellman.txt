@@ -54,14 +54,3 @@ int main() {
 }
 
 
-Output
-
-Enter a prime number: 353
-Enter a primitive root of 353: 3
-Enter Private Key for User A: 97
-Enter Private Key for User B: 233
-Public Key for User A: 40
-Public Key for User B: 248
-Shared Secret Key for User A: 160
-Shared Secret Key for User B: 160
-Key Exchange Successful! Shared Key: 160
