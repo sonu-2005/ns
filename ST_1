@@ -1,0 +1,52 @@
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+ int locks, stocks, barrels;
+ int tot_l = 0, tot_s = 0, tot_b = 0;
+ float sales, com;
+ printf("Enter locks (-1 to stop): ");
+ scanf("%d", &locks);
+ while (locks != -1)
+ {
+ printf("Enter stocks and barrels: ");
+ scanf("%d %d", &stocks, &barrels);
+ // Validation
+ if (locks < 1 || locks > 70)
+ printf("Invalid locks\n");
+ else if (stocks < 1 || stocks > 80)
+ printf("Invalid stocks\n");
+ else if (barrels < 1 || barrels > 90)
+ printf("Invalid barrels\n");
+ else
+ { tot_l += locks;
+ tot_s += stocks;
+ tot_b += barrels;
+ }
+ printf("\nEnter locks (-1 to stop): ");
+ scanf("%d", &locks);
+ }
+
+ sales = tot_l * 45 + tot_s * 30 + tot_b * 25;
+ 
+ if (sales <= 1000)
+ {
+ com = 0.10 * sales;
+ }
+ else if (sales <= 1800)
+ {
+ com = 0.10 * 1000;
+ com = com + (0.15 * (sales - 1000));
+ }
+ else
+ {
+ com = 0.10 * 1000;
+ com = com + (0.15 * 800); com = com + (0.20 * (sales - 1800));
+ }
+ printf("\nTotal Locks = %d", tot_l);
+ printf("\nTotal Stocks = %d", tot_s);
+ printf("\nTotal Barrels = %d", tot_b);
+ printf("\nTotal Sales = %.2f", sales);
+ printf("\nCommission = %.2f", com);
+ getch();
+}
